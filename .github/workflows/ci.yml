@@ -8,28 +8,28 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2 #descargamos código de repositorio  
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v2 #se descarga version de python
       with:
         python-version: '3.8'
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        pip install -r requirements.txt #dependencias de proyecto
 
     - name: Run security tests
       run: |
         # Realizar auditoría de seguridad utilizando Bandit
-        pip install bandit
+        pip install bandit # src/
         bandit -r src/
         
         # Realizar análisis de vulnerabilidades en dependencias
         pip install safety
         safety check
 
-    - name: Deploy to AWS
+    - name: Deploy to AWS # credenciales de aws con claves de acceso almacenadas en secretos
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
