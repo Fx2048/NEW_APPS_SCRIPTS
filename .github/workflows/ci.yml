@@ -15,11 +15,11 @@ jobs:
       with:
         python-version: '3.8'
 
-    - name: Install dependencies
+    - name: Install dependencies # usar requierement for nuestro proyecto
       run: |
-        pip install -r requirements.txt #dependencias de proyecto
+        pip install -r requirements.txt 
 
-    - name: Run security tests
+    - name: Run security tests 
       run: |
         # Realizar auditoría de seguridad utilizando Bandit
         pip install bandit # src/
