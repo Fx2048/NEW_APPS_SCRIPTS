@@ -1,0 +1,43 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run security tests
+      run: |
+        # Realizar auditoría de seguridad utilizando Bandit
+        pip install bandit
+        bandit -r src/
+        
+        # Realizar análisis de vulnerabilidades en dependencias
+        pip install safety
+        safety check
+
+    - name: Deploy to AWS
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: 'us-east-1'
+      run: |
+        # Script para configurar y desplegar seguridad en AWS
+        python src/utils/deploy_security.py
+        
+        # Desplegar y configurar servicios de seguridad como STS y Cognito
+        python src/utils/configure_sts.py
+        python src/utils/configure_cognito.py
