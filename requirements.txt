@@ -16,3 +16,28 @@ cryptography==41.0.3
 # Dependencias para el manejo de variables de entorno
 python-dotenv==1.0.0
 
+# .env
+
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_PASSWORD=yourpassword
+AWS_ACCESS_KEY_ID=your_access_key_id
+AWS_SECRET_ACCESS_KEY=your_secret_access_key
+AWS_REGION=us-west-2
+SSL_CERTFILE=/path/to/your/certfile.pem
+SSL_KEYFILE=/path/to/your/keyfile.pem
+
+from dotenv import load_dotenv
+import os
+
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
+
+REDIS_HOST = os.getenv("REDIS_HOST")
+REDIS_PORT = int(os.getenv("REDIS_PORT"))
+REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
+SSL_CERTFILE = os.getenv("SSL_CERTFILE")
+SSL_KEYFILE = os.getenv("SSL_KEYFILE")
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_REGION = os.getenv("AWS_REGION")
