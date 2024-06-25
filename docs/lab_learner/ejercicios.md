@@ -1,2 +1,2 @@
-[Códigos creados a partir del LAB LEARNER](TAREAS/LAB_AMAZON/ENSAYOS_LABS/code 1 y 2/24 actividades_act17)
+[Códigos creados a partir del LAB LEARNER](https://github.com/Fx2048/COMU_REDES/tree/main/TAREAS/LAB_AMAZON/ENSAYOS_LABS/code%201%20y%202/24%20actividades_act17))
 
