@@ -1,1 +1,18 @@
+# requirements.txt
+
+# Dependencias para trabajar con Redis
+redis==4.5.1
+
+# Dependencias para la autenticación en AWS y otros servicios de AWS
+boto3==1.26.67
+botocore==1.29.67
+
+# Dependencias de seguridad adicionales (por ejemplo, para análisis de seguridad)
+bandit==1.7.4
+
+# Dependencias para la gestión de certificados SSL
+cryptography==41.0.3
+
+# Dependencias para el manejo de variables de entorno
+python-dotenv==1.0.0
 
