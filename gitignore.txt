@@ -1,0 +1,128 @@
+# Archivos DLL / optimizados / compilados en bytes
+__pycache__/
+*.py[cod]
+*$py.class
+
+# extensiones C
+*.so
+
+#Paquetes de distribucion
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Registros del instalador
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Prueba unitaria / informes de cobertura
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Traducciones
+*.mo
+*.pot
+
+# Recursos Django:
+*.log
+local_settings.py
+db.sqlite3
+
+# Recursos Flask:
+instance/
+.webassets-cache
+
+# Recursos Scrapy:
+.scrapy
+
+# Documentaación Sphinx :
+docs/_build/
+
+# PyBuilder:
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# archivo de programación beat
+celerybeat-schedule
+
+# dotenv
+.env
+.env.*
+
+# Ambiente simulado:
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+#Configuración proyecto Spyder 
+.spyderproject
+.spyproject
+
+# Configuración del proyecto rope
+.ropeproject
+
+# mkdocs documentación
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# AWS credenciales y configuración
+.aws/credentials
+.aws/config
+
+# Editor directorios y archivos
+.vscode/
+.idea/
+*.sublime-workspace
+
+# OS-generador de archivos
+.DS_Store
+Thumbs.db
+
+# Token secretos:
+*.jwt
+*.key
+
+# Ignore el archivo de clave secreta (si usa un archivo separado para claves secretas)
+secret_key.txt
