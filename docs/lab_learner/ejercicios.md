@@ -1,5 +1,10 @@
 # Lab learner
 
+![image](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/0ad62d1a-21b5-44fc-8586-200d42976cd9)
+
+![image](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/9438a279-2804-4310-a537-2a7f02341415)
+
+
 Configurar una Virtual Private Cloud (VPC) y subnets, así como implementar grupos de seguridad y listas de control de acceso a redes (NACLs), es esencial para asegurar tus conexiones de red en AWS. Aquí te dejo una guía paso a paso para realizar estas configuraciones:
 
 Configurar una VPC y Subnets
