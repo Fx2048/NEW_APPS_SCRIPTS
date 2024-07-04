@@ -1,16 +1,153 @@
 # Lab learner
+
+Configurar una Virtual Private Cloud (VPC) y subnets, así como implementar grupos de seguridad y listas de control de acceso a redes (NACLs), es esencial para asegurar tus conexiones de red en AWS. Aquí te dejo una guía paso a paso para realizar estas configuraciones:
+
+Configurar una VPC y Subnets
+
+Crear una VPC:
+
+Abre la consola de Amazon VPC en AWS Management Console.
+
+En el panel de navegación, selecciona “Your VPCs” y luego “Create VPC”.
+
+Ingresa un nombre para tu VPC y un bloque CIDR (por ejemplo, 10.0.0.0/16).
+
+Selecciona “Create”.
+
+Crear Subnets:
+
+En el panel de navegación, selecciona “Subnets” y luego “Create Subnet”.
+
+Selecciona la VPC que acabas de crear.
+
+Ingresa un nombre para la subred y un bloque CIDR (por ejemplo, 10.0.1.0/24 para una subred pública y 10.0.2.0/24 para una subred privada).
+
+Selecciona la zona de disponibilidad y crea la subred.
+
+Configurar una Internet Gateway:
+
+En el panel de navegación, selecciona “Internet Gateways” y luego “Create Internet Gateway”.
+
+Ingresa un nombre y selecciona “Create”.
+
+Adjunta la Internet Gateway a tu VPC
+
 ![image](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/3050cc32-e6e3-4bb0-af81-7b1dff61e860)
 
 
 ![Imagen de WhatsApp 2024-07-02 a las 12 02 02_87cea69b](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/e0302457-2b36-4072-aa8b-37e60efd1c0c)
 
+Configurar Route Tables:
+
+En el panel de navegación, selecciona “Route Tables” y luego “Create Route Table”.
+
+Selecciona tu VPC y crea la tabla de rutas.
+
+Agrega una ruta para la subred pública que apunte a la Internet Gateway (0.0.0.0/0 -> igw-id)
 
 ![Imagen de WhatsApp 2024-07-02 a las 12 04 56_aa755aa4](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/57f09f94-ae1f-4fe8-8cdb-dc8a75aade5a)
 
 
+Agregar una Nueva Ruta:
+Haz clic en “Add route” (Agregar ruta).
+
+Campo “Destination” (Destino):
+
+Ingresa 0.0.0.0/0 para permitir el tráfico a cualquier destino.
+Campo “Target” (Destino):
+
+Selecciona “Puerta de enlace de Internet” de la lista de opciones.
+Guardar Cambios:
+
+Haz clic en “Save changes” (Guardar cambios) para aplicar la nueva ruta
+
 ![Imagen de WhatsApp 2024-07-02 a las 12 05 40_67b30408](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/3225e76e-7686-42a0-b9d3-b308e00958d2)
 
+
+Pasos para Agregar Permisos a un Rol
+Iniciar Sesión en AWS:
+
+Abre la consola de administración de AWS y inicia sesión.
+
+Acceder a IAM:
+
+En el menú de servicios, selecciona “IAM”.
+
+Navegar a Roles:
+
+En el panel de navegación de la izquierda, selecciona “Roles”.
+
+Seleccionar el Rol:
+
+Busca y selecciona el rol voclabs.
+
+Agregar Permisos:
+
+En la pestaña “Permissions” (Permisos), haz clic en “Add permissions” (Agregar permisos).
+
+Selecciona “Attach policies directly” (Adjuntar políticas directamente).
+
+Buscar y Seleccionar la Política:
+
+Busca la política AccessAnalyzerFullAccess o una política personalizada que incluya el permiso access-analyzer:ValidatePolicy.
+
+Marca la casilla junto a la política y haz clic en “Next: Review” (Siguiente: Revisar).
+
+Revisa los permisos y haz clic en “Add permissions” (Agregar permisos).
+
+Ejemplo de Política en JSON
+
+Si prefieres crear una política personalizada, aquí tienes un ejemplo en formato JSON:
+
+JSON
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "access-analyzer:ValidatePolicy",
+      "Resource": "*"
+    }
+  ]
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Agregar la Política Personalizada
+Crear una Nueva Política:
+En el panel de IAM, selecciona “Policies” (Políticas).
+Haz clic en “Create policy” (Crear política).
+Selecciona la pestaña “JSON” y pega el código de la política.
+Haz clic en “Review policy” (Revisar política).
+Asigna un nombre y una descripción a la política y haz clic en “Create policy” (Crear política).
+Adjuntar la Política al Rol:
+Sigue los pasos anteriores para agregar permisos y selecciona la nueva política personalizada
+
 ![Imagen de WhatsApp 2024-07-02 a las 12 06 58_523ff03d](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/3918b5ba-4e5e-4b74-bf9d-e12628bef856)
+
+Pasos para Agregar Permisos a un Rol
+Iniciar Sesión en AWS:
+
+Abre la consola de administración de AWS y inicia sesión.
+Acceder a IAM:
+
+En el menú de servicios, selecciona “IAM”.
+Navegar a Roles:
+
+En el panel de navegación de la izquierda, selecciona “Roles”.
+Seleccionar el Rol:
+
+Busca y selecciona el rol voclabs.
+Agregar Permisos:
+
+En la pestaña “Permissions” (Permisos), haz clic en “Add permissions” (Agregar permisos).
+
+Selecciona “Attach policies directly” (Adjuntar políticas directamente).
+
+Buscar y Seleccionar la Política:
+
+Busca la política AmazonEC2FullAccess o crea una política personalizada que incluya los permisos necesarios.
+
+
 
 ![Imagen de WhatsApp 2024-07-02 a las 12 20 54_497db99c](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/f534f1d5-42fa-4676-ab46-e8a2b4e025eb)
 
