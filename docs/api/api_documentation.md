@@ -156,11 +156,11 @@ El proyecto está siguiendo un esquema estructurado que se divide en dos partes 
    - Automatización de configuración de seguridad
    - Creación de roles, políticas y configuraciones de Cognito
 
-2. **Ejercicios Prácticos**
+2. **Ejercicios Práctico en RoyalhighFoundation**
    - Auditoría de Seguridad
    - Simulación de Ataques
    - Integración de Servicios de Seguridad de AWS
    - Desarrollo de Políticas de IAM Personalizadas
    - Automatización de Respuestas a Incidentes
 
-Este esquema asegura que los estudiantes no solo comprendan los conceptos teóricos, sino que también apliquen estos conocimientos en escenarios prácticos, fortaleciendo así la seguridad de las aplicaciones desarrolladas en AWS.
+
