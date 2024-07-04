@@ -1,7 +1,7 @@
 # Factores Teóricos de una API
 ## Descripción General
 PRÁCTICAS APPS SEGURAS
-Entendido. Profundizaré en cada uno de los tres pilares fundamentales de la seguridad en aplicaciones cloud en AWS con detalle:
+
 
 1. Configuración robusta de la infraestructura:
 
