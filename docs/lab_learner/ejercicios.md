@@ -22,30 +22,40 @@ Selecciona la VPC que acabas de crear.
 
 Ingresa un nombre para la subred y un bloque CIDR (por ejemplo, 10.0.1.0/24 para una subred pública y 10.0.2.0/24 para una subred privada).
 
+
+
+
+
+![Imagen de WhatsApp 2024-07-02 a las 12 02 02_87cea69b](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/e0302457-2b36-4072-aa8b-37e60efd1c0c)
+
 Selecciona la zona de disponibilidad y crea la subred.
 
 Configurar una Internet Gateway:
 
 En el panel de navegación, selecciona “Internet Gateways” y luego “Create Internet Gateway”.
 
+![Imagen de WhatsApp 2024-07-02 a las 12 04 56_aa755aa4](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/57f09f94-ae1f-4fe8-8cdb-dc8a75aade5a)
+
 Ingresa un nombre y selecciona “Create”.
 
 Adjunta la Internet Gateway a tu VPC
 
-![image](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/3050cc32-e6e3-4bb0-af81-7b1dff61e860)
 
 
-![Imagen de WhatsApp 2024-07-02 a las 12 02 02_87cea69b](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/e0302457-2b36-4072-aa8b-37e60efd1c0c)
+
+![Imagen de WhatsApp 2024-07-02 a las 12 05 40_67b30408](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/3225e76e-7686-42a0-b9d3-b308e00958d2)
 
 Configurar Route Tables:
 
 En el panel de navegación, selecciona “Route Tables” y luego “Create Route Table”.
 
+![Imagen de WhatsApp 2024-07-02 a las 12 06 58_523ff03d](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/3918b5ba-4e5e-4b74-bf9d-e12628bef856)
+
+![Imagen de WhatsApp 2024-07-02 a las 12 20 54_497db99c](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/f534f1d5-42fa-4676-ab46-e8a2b4e025eb)
 Selecciona tu VPC y crea la tabla de rutas.
 
 Agrega una ruta para la subred pública que apunte a la Internet Gateway (0.0.0.0/0 -> igw-id)
 
-![Imagen de WhatsApp 2024-07-02 a las 12 04 56_aa755aa4](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/57f09f94-ae1f-4fe8-8cdb-dc8a75aade5a)
 
 
 Agregar una Nueva Ruta:
@@ -61,7 +71,6 @@ Guardar Cambios:
 
 Haz clic en “Save changes” (Guardar cambios) para aplicar la nueva ruta
 
-![Imagen de WhatsApp 2024-07-02 a las 12 05 40_67b30408](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/3225e76e-7686-42a0-b9d3-b308e00958d2)
 
 
 Pasos para Agregar Permisos a un Rol
@@ -100,7 +109,7 @@ Ejemplo de Política en JSON
 Si prefieres crear una política personalizada, aquí tienes un ejemplo en formato JSON:
 
 JSON
-
+````
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -111,8 +120,15 @@ JSON
     }
   ]
 }
-Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+
+````
+![Imagen de WhatsApp 2024-07-02 a las 12 35 48_a2eae40b](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/2fa6beff-cd56-45b4-8323-a3d0d849b97f)
+
+
+![Imagen de WhatsApp 2024-07-02 a las 12 44 03_57eb4a2e](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/0f57e2a4-6d92-4232-9fad-508b613651fa)
+
 Agregar la Política Personalizada
+
 Crear una Nueva Política:
 En el panel de IAM, selecciona “Policies” (Políticas).
 Haz clic en “Create policy” (Crear política).
@@ -122,7 +138,6 @@ Asigna un nombre y una descripción a la política y haz clic en “Create polic
 Adjuntar la Política al Rol:
 Sigue los pasos anteriores para agregar permisos y selecciona la nueva política personalizada
 
-![Imagen de WhatsApp 2024-07-02 a las 12 06 58_523ff03d](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/3918b5ba-4e5e-4b74-bf9d-e12628bef856)
 
 Pasos para Agregar Permisos a un Rol
 Iniciar Sesión en AWS:
@@ -149,12 +164,7 @@ Busca la política AmazonEC2FullAccess o crea una política personalizada que in
 
 
 
-![Imagen de WhatsApp 2024-07-02 a las 12 20 54_497db99c](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/f534f1d5-42fa-4676-ab46-e8a2b4e025eb)
 
-![Imagen de WhatsApp 2024-07-02 a las 12 35 48_a2eae40b](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/2fa6beff-cd56-45b4-8323-a3d0d849b97f)
-
-
-![Imagen de WhatsApp 2024-07-02 a las 12 44 03_57eb4a2e](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/0f57e2a4-6d92-4232-9fad-508b613651fa)
 
 
 ![Imagen de WhatsApp 2024-07-02 a las 13 38 39_8391a4c1](https://github.com/Fx2048/NEW_APPS_SCRIPTS/assets/131219987/9f207e48-f031-4c81-bda4-1d95c6bb6fba)
