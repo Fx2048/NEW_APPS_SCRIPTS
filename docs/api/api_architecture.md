@@ -315,13 +315,24 @@ El proyecto está siguiendo un esquema estructurado que se divide en dos partes 
 
 Glossary: 
 
-#hasslib:
 
-This module implements a common interface to many secure hash and message digest algorithms, such as SHA-1, SHA-256, and MD5.
+
+Los endpoints 
+son esenciales para la comunicación entre diferentes sistemas de software. Permiten que una aplicación solicite datos o servicios de otra aplicación
+
+hashlib: This module implements a common interface to many secure hash and message digest algorithms, such as SHA-1, SHA-256, and MD5.
 os: This module provides a way to interact with the operating system
 
-# Un grupo de usuarios de Amazon Cognito
+Un grupo de usuarios de Amazon Cognito
  es un directorio de usuarios para la autenticación de aplicaciones web y móviles y autorización.
  agrega capas de características adicionales para seguridad, identidad federación, integración de aplicaciones y personalización de la experiencia del usuario
 La inyección SQL 
 es una vulnerabilidad de seguridad que permite a un atacante interferir con las consultas que una aplicación hace a su base de datos.
+
+Un endpoint es la dirección específica donde una API recibe solicitudes y envía respuestas. Es fundamental para la interacción entre aplicaciones y servicios en la web.
+¿Qué es una API?
+Una API (Interfaz de Programación de Aplicaciones) es un conjunto de definiciones y protocolos que permite que dos aplicaciones se comuniquen entre sí. 
+
+API: Interfaz general para la comunicación entre aplicaciones.
+API REST: API que sigue los principios de REST, utilizando HTTP y operaciones estándar.
+API RESTful: Implementación específica de una API REST.
