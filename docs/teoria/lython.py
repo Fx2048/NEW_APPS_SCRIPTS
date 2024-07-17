@@ -1,3 +1,34 @@
+1. Encapsulación:
+La encapsulación es el proceso de ocultar la información 
+interna de un objeto y exponer solo los detalles relevantes y
+necesarios para su uso externo. Esto se logra mediante 
+el uso de clases en la POO. Una clase actúa como un plano 
+o una plantilla para crear objetos, y encapsula tanto los 
+datos como las funciones relacionadas en un solo lugar.
+
+2. Herencia:
+La herencia permite que una clase herede propiedades
+y comportamientos de otra clase. Esto significa que una 
+clase hija puede aprovechar y extender las características 
+de su clase padre. La herencia es una forma poderosa de reutilizar
+código y crear jerarquías de clases bien estructuradas.
+
+3. Polimorfismo:
+El polimorfismo se refiere a la capacidad de un objeto de tomar
+muchas formas diferentes. En la POO, esto se logra mediante el
+uso de la herencia y la implementación de métodos y funciones
+con el mismo nombre en diferentes clases. El polimorfismo permite
+escribir código genérico que puede funcionar con diferentes tipos
+de objetos, lo que aumenta la flexibilidad y la modularidad del software.
+
+4. Abstracción:
+La abstracción es el proceso de simplificar un objeto o un sistema 
+complejo mediante la identificación de las características y 
+comportamientos esenciales y la eliminación de los detalles innecesarios.
+En la POO, esto se logra mediante la creación de clases abstractas e
+interfaces, que definen una estructura común y establecen un conjunto 
+de métodos que deben implementarse en las clases derivadas
+
 import random
 import time
 
