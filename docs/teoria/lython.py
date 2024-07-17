@@ -327,20 +327,25 @@ if __name__ == "__main__":
     manager.listar_vlans()
 
 
-
 import random
 import time
 import threading
 
 class VirtualMachine:
-    def __init__(self, id, name, cpu, memory):
-        self.id = id
+    def __init__(self, vm_id, name, cpu, memory):
+        """
+        Inicializa una máquina virtual con ID, nombre, CPU y memoria.
+        """
+        self.id = vm_id
         self.name = name
         self.cpu = cpu
         self.memory = memory
-        self.state = "stopped"  # States: stopped, running, failed
+        self.state = "stopped"  # Estados: stopped, running, failed
 
     def start(self):
+        """
+        Inicia la máquina virtual.
+        """
         try:
             if self.state == "stopped":
                 self.state = "running"
@@ -351,6 +356,9 @@ class VirtualMachine:
             print(f"Error starting VM {self.name}: {e}")
 
     def stop(self):
+        """
+        Detiene la máquina virtual.
+        """
         try:
             if self.state == "running":
                 self.state = "stopped"
@@ -361,6 +369,9 @@ class VirtualMachine:
             print(f"Error stopping VM {self.name}: {e}")
 
     def restart(self):
+        """
+        Reinicia la máquina virtual.
+        """
         try:
             if self.state == "running":
                 self.stop()
@@ -372,6 +383,9 @@ class VirtualMachine:
             print(f"Error restarting VM {self.name}: {e}")
 
     def fail(self):
+        """
+        Simula una falla en la máquina virtual.
+        """
         try:
             self.state = "failed"
             print(f"VM {self.name} has failed.")
@@ -379,6 +393,9 @@ class VirtualMachine:
             print(f"Error failing VM {self.name}: {e}")
 
     def recover(self):
+        """
+        Recupera la máquina virtual de un estado de falla.
+        """
         try:
             if self.state == "failed":
                 self.state = "running"
@@ -390,10 +407,16 @@ class VirtualMachine:
 
 class Hypervisor:
     def __init__(self):
+        """
+        Inicializa el hipervisor con una lista vacía de máquinas virtuales.
+        """
         self.vms = {}
         self.lock = threading.Lock()
 
     def add_vm(self, vm):
+        """
+        Añade una máquina virtual al hipervisor.
+        """
         try:
             self.vms[vm.id] = vm
             print(f"VM {vm.name} added to hypervisor.")
@@ -401,6 +424,9 @@ class Hypervisor:
             print(f"Error adding VM {vm.name}: {e}")
 
     def remove_vm(self, vm_id):
+        """
+        Elimina una máquina virtual del hipervisor.
+        """
         try:
             if vm_id in self.vms:
                 del self.vms[vm_id]
@@ -411,6 +437,9 @@ class Hypervisor:
             print(f"Error removing VM with ID {vm_id}: {e}")
 
     def start_vm(self, vm_id):
+        """
+        Inicia una máquina virtual específica.
+        """
         try:
             if vm_id in self.vms:
                 self.vms[vm_id].start()
@@ -420,6 +449,9 @@ class Hypervisor:
             print(f"Error starting VM with ID {vm_id}: {e}")
 
     def stop_vm(self, vm_id):
+        """
+        Detiene una máquina virtual específica.
+        """
         try:
             if vm_id in self.vms:
                 self.vms[vm_id].stop()
@@ -429,6 +461,9 @@ class Hypervisor:
             print(f"Error stopping VM with ID {vm_id}: {e}")
 
     def restart_vm(self, vm_id):
+        """
+        Reinicia una máquina virtual específica.
+        """
         try:
             if vm_id in self.vms:
                 self.vms[vm_id].restart()
@@ -438,6 +473,9 @@ class Hypervisor:
             print(f"Error restarting VM with ID {vm_id}: {e}")
 
     def simulate_failure(self):
+        """
+        Simula fallos aleatorios en las máquinas virtuales.
+        """
         while True:
             try:
                 with self.lock:
@@ -449,6 +487,9 @@ class Hypervisor:
                 print(f"Error during failure simulation: {e}")
 
     def auto_recover(self):
+        """
+        Recupera automáticamente las máquinas virtuales que han fallado.
+        """
         while True:
             try:
                 with self.lock:
@@ -490,5 +531,3 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         print("Simulación terminada.")
-
-
